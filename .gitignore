@@ -1,1 +1,3 @@
 config/initializers/omniauth.rb
+.project
+temp/*
