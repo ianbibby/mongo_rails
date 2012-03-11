@@ -1,4 +1,7 @@
 MongoRails::Application.routes.draw do
+  root :to => 'home#index'
+  resources :users, :only => [ :show, :edit, :update ]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -52,7 +55,8 @@ MongoRails::Application.routes.draw do
 
   # See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/auth/failure' => 'sessions#failure'
+  match '/signout' => 'sessions#destroy', :as => :signout
+  match '/signin' => 'sessions#new', :as => :signin
 end

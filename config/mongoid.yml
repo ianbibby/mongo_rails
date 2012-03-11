@@ -2,6 +2,7 @@ development:
   host: localhost
   database: mongo_rails_development
 
+
 test:
   host: localhost
   database: mongo_rails_test

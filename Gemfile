@@ -17,3 +17,5 @@ gem "omniauth"
 gem "omniauth-twitter"
 gem 'bson_ext', '1.6.1'
 gem 'mongoid'
+
+
